@@ -3,22 +3,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+
 public class pauseMenu : MonoBehaviour
 {
-    Button settingsBtn, resumeBtn, exitBtn, pauseBtn;
+
+    Button resumeBtn, exitBtn, pauseBtn;
+    SliderInt volSldr;
     VisualElement pauseContainer;
     VisualElement root;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
-        settingsBtn = root.Q<Button>("settingsButton");
+        volSldr = root.Q<SliderInt>("volumeSlider");
         resumeBtn = root.Q<Button>("resumeButton");
         exitBtn = root.Q<Button>("exitButton");
         pauseBtn = root.Q<Button>("pauseButton");
         pauseContainer = root.Q<VisualElement>("pauseContainer");
-    }
 
+        volSldr.RegisterCallback<ChangeEvent<int>>(ModifyVolume);
+    }
+    
     private void OnEnable()
     {
         pauseBtn.clicked += ShowPauseMenu;
@@ -51,6 +56,12 @@ public class pauseMenu : MonoBehaviour
     void ShowSettingsMenu()
     {
         // TODO: Add Settings code idk.
+    }
+
+    void ModifyVolume(ChangeEvent<int> evt)
+    {
+        AudioListener.volume = volSldr.value / ((float)volSldr.highValue);
+        Debug.Log(AudioListener.volume);
     }
 
     // Update is called once per frame

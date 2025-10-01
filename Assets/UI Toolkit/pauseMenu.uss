@@ -1,16 +1,22 @@
 :root {
 }
 
-.pauseButton {
+.pauseMenuButton {
     font-size: 24px;
     -unity-font-style: bold;
     border-top-left-radius: 26px;
     border-top-right-radius: 26px;
     border-bottom-right-radius: 26px;
     border-bottom-left-radius: 26px;
+    background-color: rgb(60, 60, 60);
+    color: rgb(196, 196, 196);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
 }
 
-.pauseButton:hover {
+.pauseMenuButton:hover {
     font-size: 24px;
     -unity-font-style: bold;
     border-top-left-radius: 26px;

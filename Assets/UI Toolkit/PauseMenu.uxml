@@ -2,14 +2,14 @@
     <Style src="project://database/Assets/UI%20Toolkit/pauseMenu.uss?fileID=7433441132597879392&amp;guid=7b8c5122dbc177648a18ba006fa925bf&amp;type=3#pauseMenu" />
     <ui:VisualElement name="VisualElement" style="height: 1081px;">
         <ui:VisualElement name="VisualElement" style="flex-direction: row;">
-            <ui:Button text="||" name="pauseButton" style="height: 61px; width: 70px; font-size: 21px; -unity-font-style: bold;" />
+            <ui:Button text="||" name="pauseButton" style="height: 61px; width: 70px; font-size: 21px; -unity-font-style: bold; color: rgb(196, 196, 196); background-color: rgb(56, 56, 56);" />
         </ui:VisualElement>
         <ui:VisualElement name="pauseContainer" style="flex-direction: row; justify-content: center; align-items: center; flex-grow: 0; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.42); display: none;">
-            <ui:VisualElement name="pauseMenu" style="background-color: rgba(205, 205, 205, 0.44); height: 612px; width: 610px; align-items: center; justify-content: center; border-top-left-radius: 31px; border-top-right-radius: 31px; border-bottom-right-radius: 31px; border-bottom-left-radius: 31px;">
+            <ui:VisualElement name="pauseMenu" style="background-color: rgba(40, 40, 40, 0.76); height: 612px; width: 610px; align-items: center; justify-content: center; border-top-left-radius: 31px; border-top-right-radius: 31px; border-bottom-right-radius: 31px; border-bottom-left-radius: 31px;">
                 <ui:VisualElement name="pauseButtonPanel" style="height: 331px; width: 359px;">
-                    <ui:Button text="Resume" name="resumeButton" class="pauseButton" style="flex-grow: 1;" />
-                    <ui:Button text="Settings" name="settingsButton" class="pauseButton" style="flex-grow: 1;" />
-                    <ui:Button text="Exit" name="exitButton" class="pauseButton" style="flex-grow: 1;" />
+                    <ui:SliderInt label="Volume" value="42" high-value="100" name="volumeSlider" style="font-size: 24px; color: rgb(196, 196, 196);" />
+                    <ui:Button text="Resume" name="resumeButton" class="pauseButton pauseMenuButton" style="flex-grow: 1;" />
+                    <ui:Button text="Exit" name="exitButton" class="pauseButton pauseMenuButton" style="flex-grow: 1;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
